@@ -2,7 +2,7 @@
  * @license Copyright (c) 2014-2023, CKSource Holding sp. z o.o. All rights reserved.
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
  */
-import ClassicEditor from '@ckeditor/ckeditor5-editor-classic/src/classiceditor.js';
+import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment.js';
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat.js';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote.js';
@@ -37,10 +37,10 @@ import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar.js';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation.js';
 import WordCount from '@ckeditor/ckeditor5-word-count/src/wordcount.js';
 
-class Editor extends ClassicEditor {}
+export default class ClassicEditor extends ClassicEditorBase {}
 
 // Plugins to include in the build.
-Editor.builtinPlugins = [
+ClassicEditor.builtinPlugins = [
 	Alignment,
 	Autoformat,
 	BlockQuote,
@@ -77,7 +77,7 @@ Editor.builtinPlugins = [
 ];
 
 // Editor configuration.
-Editor.defaultConfig = {
+ClassicEditor.defaultConfig = {
 	toolbar: {
 		items: [
 			'heading',
@@ -128,5 +128,3 @@ Editor.defaultConfig = {
 		]
 	}
 };
-
-export default Editor;
