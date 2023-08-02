@@ -9,14 +9,12 @@ import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote.js';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold.js';
 import CloudServices from '@ckeditor/ckeditor5-cloud-services/src/cloudservices.js';
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials.js';
-import FindAndReplace from '@ckeditor/ckeditor5-find-and-replace/src/findandreplace.js';
 import FontBackgroundColor from '@ckeditor/ckeditor5-font/src/fontbackgroundcolor.js';
 import FontColor from '@ckeditor/ckeditor5-font/src/fontcolor.js';
 import FontFamily from '@ckeditor/ckeditor5-font/src/fontfamily.js';
 import FontSize from '@ckeditor/ckeditor5-font/src/fontsize.js';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading.js';
 import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight.js';
-import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline.js';
 import Image from '@ckeditor/ckeditor5-image/src/image.js';
 import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption.js';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle.js';
@@ -26,7 +24,6 @@ import Indent from '@ckeditor/ckeditor5-indent/src/indent.js';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic.js';
 import Link from '@ckeditor/ckeditor5-link/src/link.js';
 import List from '@ckeditor/ckeditor5-list/src/list.js';
-import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed.js';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph.js';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice.js';
 import SelectAll from '@ckeditor/ckeditor5-select-all/src/selectall.js';
@@ -36,6 +33,14 @@ import TableProperties from '@ckeditor/ckeditor5-table/src/tableproperties';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar.js';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation.js';
 import WordCount from '@ckeditor/ckeditor5-word-count/src/wordcount.js';
+import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize.js';
+import SpecialCharacters from '@ckeditor/ckeditor5-special-characters/src/specialcharacters.js';
+import SpecialCharactersArrows from '@ckeditor/ckeditor5-special-characters/src/specialcharactersarrows.js';
+import SpecialCharactersCurrency from '@ckeditor/ckeditor5-special-characters/src/specialcharacterscurrency.js';
+import SpecialCharactersEssentials from '@ckeditor/ckeditor5-special-characters/src/specialcharactersessentials.js';
+import SpecialCharactersText from '@ckeditor/ckeditor5-special-characters/src/specialcharacterstext.js';
+import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough.js';
+import Style from '@ckeditor/ckeditor5-style/src/style.js';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -47,14 +52,12 @@ ClassicEditor.builtinPlugins = [
 	Bold,
 	CloudServices,
 	Essentials,
-	FindAndReplace,
 	FontBackgroundColor,
 	FontColor,
 	FontFamily,
 	FontSize,
 	Heading,
 	Highlight,
-	HorizontalLine,
 	Image,
 	ImageCaption,
 	ImageStyle,
@@ -64,7 +67,6 @@ ClassicEditor.builtinPlugins = [
 	Italic,
 	Link,
 	List,
-	MediaEmbed,
 	Paragraph,
 	PasteFromOffice,
 	SelectAll,
@@ -73,7 +75,15 @@ ClassicEditor.builtinPlugins = [
 	TableProperties,
 	TableToolbar,
 	TextTransformation,
-	WordCount
+	WordCount,
+	ImageResize,
+	SpecialCharacters,
+	SpecialCharactersArrows,
+	SpecialCharactersCurrency,
+	SpecialCharactersEssentials,
+	SpecialCharactersText,
+	Strikethrough,
+	Style
 ];
 
 // Editor configuration.
@@ -94,19 +104,18 @@ ClassicEditor.defaultConfig = {
 			'imageUpload',
 			'blockQuote',
 			'insertTable',
-			'mediaEmbed',
 			'undo',
 			'redo',
 			'alignment',
 			'fontBackgroundColor',
-			'findAndReplace',
 			'fontColor',
 			'fontFamily',
 			'fontSize',
 			'highlight',
-			'selectAll',
-			'horizontalLine',
-			'superscript'
+			'|',
+			'specialCharacters',
+			'strikethrough',
+			'style'
 		]
 	},
 	language: 'en',
